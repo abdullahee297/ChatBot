@@ -54,7 +54,13 @@
                 placeholder="Ask anything about coding or studies..." 
                 required
             >
-
+            
+            <button id='micbtn'>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-mic" viewBox="0 0 16 16">
+                    <path d="M3.5 6.5A.5.5 0 0 1 4 7v1a4 4 0 0 0 8 0V7a.5.5 0 0 1 1 0v1a5 5 0 0 1-4.5 4.975V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 .5-.5"/>
+                    <path d="M10 8a2 2 0 1 1-4 0V3a2 2 0 1 1 4 0zM8 0a3 3 0 0 0-3 3v5a3 3 0 0 0 6 0V3a3 3 0 0 0-3-3"/>
+                </svg>
+            </button>
             <button type="submit">Send</button>
         </form>
 
@@ -62,28 +68,82 @@
 
 </div>
 
-
 <script>
 const form = document.getElementById("chat-form");
 const input = document.getElementById("prompt-input");
 const chatBox = document.getElementById("chat-box");
+const micBtn = document.getElementById("micbtn");
 
 window.onload = function () {
     chatBox.scrollTop = chatBox.scrollHeight;
 };
 
-form.addEventListener("submit", async function(e) {
+let mediaRecorder;
+let audioChunks = [];
+let isRecording = false;
+
+micBtn.addEventListener("click", async function (e) {
     e.preventDefault();
 
-    const prompt = input.value.trim();
-    if (!prompt) return;
+    if (!isRecording) {
+        startRecording();
+    } else {
+        stopRecording();
+    }
+});
 
+async function startRecording() {
+    const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+    mediaRecorder = new MediaRecorder(stream);
+
+    audioChunks = [];
+    mediaRecorder.start();
+    isRecording = true;
+
+    micBtn.classList.add("recording"); 
+
+    mediaRecorder.ondataavailable = event => {
+        audioChunks.push(event.data);
+    };
+
+    mediaRecorder.onstop = sendAudio;
+}
+
+function stopRecording() {
+    mediaRecorder.stop();
+    isRecording = false;
+
+    micBtn.classList.remove("recording");
+}
+
+async function sendAudio() {
+    const blob = new Blob(audioChunks, { type: "audio/wav" });
+    const formData = new FormData();
+    formData.append("audio", blob);
+
+    const res = await fetch("/speech/", {
+        method: "POST",
+        headers: {
+            "X-CSRFToken": getCSRFToken() 
+        },
+        body: formData
+    });
+
+    const data = await res.json();
+
+    if (data.text) {
+        startChatStream(data.text);
+    } else {
+        alert(data.error);
+    }
+}
+
+
+async function startChatStream(prompt) {
     const userDiv = document.createElement("div");
     userDiv.className = "message user-message";
     userDiv.innerHTML = `<p><b>You:</b> ${prompt}</p>`;
     chatBox.appendChild(userDiv);
-
-    input.value = "";
 
     const botDiv = document.createElement("div");
     botDiv.className = "message bot-message";
@@ -106,11 +166,23 @@ form.addEventListener("submit", async function(e) {
         result += chunk;
 
         botText.innerText = result;
-
         chatBox.scrollTop = chatBox.scrollHeight;
     }
+}
+
+function getCSRFToken() {
+    return document.querySelector('[name=csrfmiddlewaretoken]').value;
+}
+
+form.addEventListener("submit", async function(e) {
+    e.preventDefault();
+
+    const prompt = input.value.trim();
+    if (!prompt) return;
+
+    input.value = "";
+    startChatStream(prompt);
 });
 </script>
-
 </body>
 </html>

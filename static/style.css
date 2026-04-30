@@ -142,6 +142,20 @@ body {
     border-radius: 10px;
 }
 
+#micbtn {
+    background: #6366f1;
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#micbtn.recording {
+    background: red;
+    transform: scale(1.1);
+}
 
 @keyframes fadeIn {
     from {

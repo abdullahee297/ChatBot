@@ -21,6 +21,7 @@ from myapp import views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("chatbot", views.chatbot, name='chatbot'),
+    path("", views.chatbot, name='chatbot'),
     path("stream/", views.chatbot_stream, name="chatbot_stream"), 
+    path("speech/", views.speech_to_text, name="speech_to_text"), 
 ]
