@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-client = Groq(api_key="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")
+client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 
 def groq_stream(prompt):
     stream = client.chat.completions.create(
