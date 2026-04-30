@@ -3,7 +3,6 @@ import json
 import speech_recognition as sr
 from django.shortcuts import render
 from django.http import StreamingHttpResponse, JsonResponse
-from tkinter import *
 import speech_recognition as sr
 
 recognizer = sr.Recognizer()
