@@ -59,7 +59,6 @@ The project includes:
 - PostgreSQL / NeonDB Support
 - Environment Variable Configuration
 
----
 
 # 🛠️ Tech Stack
 
@@ -90,7 +89,6 @@ student-chatbot/
 └── README.md
 ```
 
----
 
 # ⚙️ Installation Guide
 
@@ -102,7 +100,6 @@ git clone https://github.com/your-username/student-chatbot.git
 cd student-chatbot
 ```
 
----
 
 ## 2️⃣ Create Virtual Environment
 
@@ -122,7 +119,6 @@ python3 -m venv venv
 source venv/bin/activate
 ```
 
----
 
 ## 3️⃣ Install Dependencies
 
@@ -130,7 +126,6 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
----
 
 ## 4️⃣ Create `.env` File
 
@@ -146,15 +141,13 @@ DATABASE_URL=your_database_url
 GROQ_API_KEY=your_groq_api_key
 ```
 
----
-
+--
 ## 5️⃣ Apply Migrations
 
 ```bash
 python manage.py migrate
 ```
 
----
 
 ## 6️⃣ Run Development Server
 
@@ -184,11 +177,7 @@ Authenticated Session
 Access AI Chatbot
 ```
 
----
 
-# 📸 Screenshots
-
-## 🔐 Login Page
 
 Add Screenshot Here
 
