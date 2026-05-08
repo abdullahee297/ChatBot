@@ -175,12 +175,15 @@ Access AI Chatbot
 
 ## 🤖 Chat Interface
 
-<img width="691" height="610" alt="Screenshot 2026-05-05 160411" src="https://github.com/user-attachments/assets/ca5147f9-b764-4169-a53b-35b203d736f4" />
-<img width="720" height="513" alt="Screenshot 2026-05-05 160417" src="https://github.com/user-attachments/assets/67d58c89-23be-4f2a-835c-b852db558ee8" />
-<img width="1893" height="616" alt="Screenshot 2026-05-05 160403" src="https://github.com/user-attachments/assets/2cf3a027-9e53-48c3-af97-2f5cd11123ed" />
 
+<p align="center">
+  <img width="250" alt="Screenshot 2026-05-05 160411" src="https://github.com/user-attachments/assets/ca5147f9-b764-4169-a53b-35b203d736f4" />
+  <img width="250" alt="Screenshot 2026-05-05 160417" src="https://github.com/user-attachments/assets/67d58c89-23be-4f2a-835c-b852db558ee8" />
+</p>
 
-
+<p align="center">
+  <img width="850" alt="Screenshot 2026-05-05 160403" src="https://github.com/user-attachments/assets/2cf3a027-9e53-48c3-af97-2f5cd11123ed" />
+</p>
 
 
 # 🚀 Future Improvements
