@@ -27,7 +27,6 @@ The project includes:
 - ☁️ Vercel Deployment Support
 - 🎨 Responsive Modern UI
 
----
 
 # ✨ Features
 
@@ -72,7 +71,6 @@ The project includes:
 | Groq API | AI Model Integration |
 | Vercel | Deployment Platform |
 
----
 
 # 📂 Project Structure
 
@@ -141,7 +139,6 @@ DATABASE_URL=your_database_url
 GROQ_API_KEY=your_groq_api_key
 ```
 
---
 ## 5️⃣ Apply Migrations
 
 ```bash
@@ -155,13 +152,11 @@ python manage.py migrate
 python manage.py runserver
 ```
 
----
 
 # 🌐 Live Demo
 
-🔗 https://your-project.vercel.app
+🔗 [https://your-project.vercel.app](https://studentai-kappa.vercel.app/)
 
----
 
 # 🔒 Authentication Flow
 
@@ -178,16 +173,15 @@ Access AI Chatbot
 ```
 
 
-
-Add Screenshot Here
-
----
-
 ## 🤖 Chat Interface
 
-Add Screenshot Here
+<img width="691" height="610" alt="Screenshot 2026-05-05 160411" src="https://github.com/user-attachments/assets/ca5147f9-b764-4169-a53b-35b203d736f4" />
+<img width="720" height="513" alt="Screenshot 2026-05-05 160417" src="https://github.com/user-attachments/assets/67d58c89-23be-4f2a-835c-b852db558ee8" />
+<img width="1893" height="616" alt="Screenshot 2026-05-05 160403" src="https://github.com/user-attachments/assets/2cf3a027-9e53-48c3-af97-2f5cd11123ed" />
 
----
+
+
+
 
 # 🚀 Future Improvements
 
@@ -200,21 +194,6 @@ Add Screenshot Here
 
 ---
 
-# 👨‍💻 Developer
-
-## Muhammad Abdullah
-
-<p align="left">
-  <a href="https://linkedin.com/in/your-linkedin">
-    <img src="https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin" />
-  </a>
-  
-  <a href="https://github.com/your-github">
-    <img src="https://img.shields.io/badge/GitHub-Profile-black?style=for-the-badge&logo=github" />
-  </a>
-</p>
-
----
 
 # ⭐ Support
 
